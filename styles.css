@@ -1,0 +1,98 @@
+/* 页面整体样式 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Banner卡片样式 */
+.banner-card {
+  width: 100%;
+  max-width: 1200px; /* 限制最大宽度，可根据实际需求调整 */
+  margin: 20px auto; /* 让卡片在页面中水平居中 */
+  border: 1px solid #ccc; /* 边框 */
+  border-radius: 5px; /* 圆角 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果，增加立体感 */
+  overflow: hidden; /* 隐藏超出部分，比如图片过大时 */
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 头部样式 */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 工作室标志样式，调整大小并设置对齐相关属性 */
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+/* 导航栏样式，设置为灰色背景 */
+nav {
+  background-color: #ccc;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  cursor: pointer;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 主体内容区域样式，设置文字颜色为黑色 */
+section {
+  background-color: white;
+  padding: 20px;
+  color: black;
+}
+
+/* 页面底部样式 */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 简洁标志及简介样式 */
+.simple-logo-with-description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* 调整简洁标志的尺寸及显示方式 */
+.simple-logo {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+}
