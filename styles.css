@@ -8,9 +8,9 @@ body {
 
 /* Banner卡片样式 */
 .banner-card {
-  width: 100%;
-  max-width: 1200px; /* 限制最大宽度，可根据实际需求调整 */
-  margin: 20px auto; /* 让卡片在页面中水平居中 */
+  width: 60%; /* 调整宽度为页面宽度的80%，可根据实际情况改变比例 */
+  max-width: 800px; /* 进一步限制最大宽度，使其不会过大 */
+  margin: 10px auto; /* 减小上下外边距，让其在页面中更紧凑 */
   border: 1px solid #ccc; /* 边框 */
   border-radius: 5px; /* 圆角 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果，增加立体感 */
