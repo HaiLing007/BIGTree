@@ -25,7 +25,7 @@
     }
 
     /* 工作室标志样式，调整大小并设置对齐相关属性 */
-  .logo {
+ .logo {
       width: 100px;
       height: 100px;
       margin-right: 10px;
@@ -59,6 +59,12 @@
       background-color: white;
       padding: 20px;
       color: black;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: visible;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
 
     /* 页面底部样式 */
@@ -70,22 +76,56 @@
     }
 
     /* 简洁标志及简介样式 */
-  .simple-logo-with-description {
+ .simple-logo-with-description {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
     }
 
     /* 调整简洁标志的尺寸及显示方式 */
-  .simple-logo {
+ .simple-logo {
       width: 150px;
       height: auto;
       margin-right: 20px;
     }
 
-  .description {
+ .description {
       font-size: 14px;
       color: #666;
+    }
+
+    /* 卡片样式 */
+ .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-basis: -webkit-calc(33.33% - 1.33%);
+      flex-basis: calc(33.33% - 1.33%);
+      margin-right: 1.33%;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+ .card:last-child {
+      margin-right: 0;
+    }
+
+    /* 卡片内图片样式，设置图片大小并与文本对齐 */
+ .card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    /* 确保卡片内标题和副标题文本水平和垂直方向都居中对齐 */
+ .card h2,
+ .card p {
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>
@@ -109,14 +149,27 @@
 
   <!-- 主体内容区域，放置大树工作室详细介绍内容 -->
   <section>
-    <div class="simple-logo-with-description">
-      <img class="simple-logo" src="tree_logo_simple.png" alt="简洁版大树工作室标志">
-      <p class="description">在服务项目方面，大树工作室专注于游戏领域，为客户提供全方位的游戏开发服务。</p>
+    <div class="card">
+      <img src="游戏.png" alt="游戏示例" onclick="window.location.href='https://example.com';">
+      <h2>精彩游戏示例 1</h2>
+      <p>这是一款令人兴奋的游戏，充满挑战与乐趣。</p>
     </div>
-    <h2>游戏开发服务</h2>
+    <h2>游戏开发服务</h></div>
     <p>我们提供多种类型的游戏开发服务，包括休闲小游戏、策略游戏、角色扮演游戏等。无论您是想要一个简单有趣的小游戏，还是一个复杂的大型游戏，我们都能满足您的需求。</p>
     <p>我们的团队拥有丰富的游戏开发经验，能够运用先进的技术和创新的设计理念，为您打造出独具特色的游戏作品。</p>
     <p>如需了解更多游戏开发相关的优秀案例或学习资源，您可以点击 <a href="https://www.ccw.site/student/64d4d16684b41e31f3ac7a6b">这里</a> 查看。</p>
+
+    <!-- 以下是添加的 3 个卡片示例，可根据实际情况复制更多卡片 -->
+    <div class="card">
+      <img src="游戏.png" alt="游戏示例 2" onclick="window.location.href='https://example.com';">
+      <h2>精彩游戏示例 2</h2>
+      <p>这是另一款趣味十足的游戏，有着独特的玩法。</p>
+    </div>
+    <div class="card">
+      <img src="happy_chicken.png" alt="开心小鸡" onclick="window.location.href='https://hailing007.github.io/BIGTree/happy_chicken/';">
+      <h2>开心小鸡</h2>
+      <p>该游戏融合了多种元素，带来不一样的体验。</p>
+    </div>
   </section>
 
   <!-- 页面底部 -->
