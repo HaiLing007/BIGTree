@@ -9,10 +9,10 @@ body {
 /* Banner卡片样式 */
 .banner-card {
   width: 60%; /* 调整宽度为页面宽度的80%，可根据实际情况改变比例 */
-  max-width: 800px; /* 进一步限制最大宽度，使其不会过大 */
+  max-width: 600px; /* 进一步限制最大宽度，使其不会过大 */
   margin: 10px auto; /* 减小上下外边距，让其在页面中更紧凑 */
   border: 1px solid #ccc; /* 边框 */
-  border-radius: 5px; /* 圆角 */
+  border-radius: 50px; /* 圆角 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果，增加立体感 */
   overflow: hidden; /* 隐藏超出部分，比如图片过大时 */
 }
