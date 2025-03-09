@@ -270,18 +270,15 @@
                 const rarpasText = await rarpasResponse.text();
                 const rarpases = rarpasText.split('\n').map(rarpas => rarpas.trim()).filter(rarpas => rarpas !== '');
                 
-                // 检查所有数组的长度是否一致
-                if (names.length !== pans.length || names.length !== panpases.length || names.length !== rarpases.length) {
-                    throw new Error('游戏名、提取码、下载链接或解压码数量不一致');
-                }
-                
                 // 生成游戏列表HTML
                 const gameList = document.getElementById('gameList');
-                for (let i = 0; i < names.length; i++) {
-                    const gameName = names[i];
-                    const gamePanpas = panpases[i];
-                    const gamePan = pans[i];
-                    const gameRarpas = rarpases[i];
+                const maxItems = Math.max(names.length, panpases.length, pans.length, rarpases.length);
+                
+                for (let i = 0; i < maxItems; i++) {
+                    const gameName = names[i] || '未知游戏';
+                    const gamePanpas = panpases[i] || '无提取码';
+                    const gamePan = pans[i] || '#';
+                    const gameRarpas = rarpases[i] || '无解压码';
                     
                     const listItem = document.createElement('li');
                     listItem.className = 'file-item';
