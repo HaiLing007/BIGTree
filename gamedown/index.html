@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏下载中心</title>
+    <style>
+        /* GitHub 风格导航栏 */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            height: 52px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e1e4e8;
+            box-sizing: border-box;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 32px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin: 0 12px;
+        }
+        
+        .nav-menu a {
+            color: #0366d6;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 6px;
+            margin-top: 4px;
+            border: 1px solid #d3d3d3;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: #0366d6;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f8ff;
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 16px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        
+        .file-selection {
+            margin-top: 24px;
+        }
+        
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        
+        .file-icon {
+            margin-right: 12px;
+            color: #0366d6;
+        }
+        
+        .file-name {
+            flex: 1;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #0366d6;
+        }
+        
+        .file-size {
+            color: #586069;
+            font-size: 14px;
+            margin-left: 16px;
+        }
+        
+        .download-btn {
+            background-color: #2ea44f;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            margin-left: 16px;
+        }
+        
+        .download-btn:hover {
+            background-color: #238a40;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background-color: #ffffff;
+            padding: 24px 16px;
+            border-top: 1px solid #e1e4e8;
+            text-align: center;
+            color: #586069;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        /* 搜索框 */
+        .search-container {
+            display: flex;
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #d3d3d3;
+            border-radius: 6px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        .search-btn {
+            background-color: #0366d6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        
+        .search-btn:hover {
+            background-color: #0256a2;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">游戏库</a></li>
+            <li><a href="#">热门推荐</a></li>
+            <li><a href="#">最新更新</a></li>
+        </ul>
+        
+        <div class="user-menu">
+            <div class="dropdown">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="User Avatar" class="user-avatar">
+                <div class="dropdown-content">
+                    <a href="#">个人中心</a>
+                    <a href="#">下载记录</a>
+                    <a href="#">设置</a>
+                    <a href="#">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主要内容区域 -->
+    <div class="main-content">
+        <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #0366d6; margin-bottom: 16px;">游戏下载中心</h1>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="搜索游戏...">
+            <button class="search-btn">搜索</button>
+        </div>
+        
+        <div class="file-selection">
+            <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #24292e; margin: 24px 0 16px 0;">游戏列表</h2>
+            
+            <ul class="file-list" id="gameList">
+                <!-- 游戏列表将通过JavaScript动态生成 -->
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>© 2023 游戏下载中心 · <a href="#" style="color: #0366d6; text-decoration: none;">隐私政策</a> · <a href="#" style="color: #0366d6; text-decoration: none;">使用条款</a> · <a href="#" style="color: #0366d6; text-decoration: none;">联系我们</a></p>
+    </div>
+    
+    <script>
+        // 读取游戏名、提取码、下载链接和解压码文件并生成游戏列表
+        async function loadGames() {
+            try {
+                // 读取游戏名文件
+                const nameResponse = await fetch('name.txt');
+                const nameText = await nameResponse.text();
+                const names = nameText.split('\n').map(name => name.trim()).filter(name => name !== '');
+                
+                // 读取提取码文件
+                const panpasResponse = await fetch('panpas.txt');
+                const panpasText = await panpasResponse.text();
+                const panpases = panpasText.split('\n').map(panpas => panpas.trim()).filter(panpas => panpas !== '');
+                
+                // 读取下载链接文件
+                const panResponse = await fetch('pan.txt');
+                const panText = await panResponse.text();
+                const pans = panText.split('\n').map(pan => pan.trim()).filter(pan => pan !== '');
+                
+                // 读取解压码文件
+                const rarpasResponse = await fetch('rarpas.txt');
+                const rarpasText = await rarpasResponse.text();
+                const rarpases = rarpasText.split('\n').map(rarpas => rarpas.trim()).filter(rarpas => rarpas !== '');
+                
+                // 检查所有数组的长度是否一致
+                if (names.length !== pans.length || names.length !== panpases.length || names.length !== rarpases.length) {
+                    throw new Error('游戏名、提取码、下载链接或解压码数量不一致');
+                }
+                
+                // 生成游戏列表HTML
+                const gameList = document.getElementById('gameList');
+                for (let i = 0; i < names.length; i++) {
+                    const gameName = names[i];
+                    const gamePanpas = panpases[i];
+                    const gamePan = pans[i];
+                    const gameRarpas = rarpases[i];
+                    
+                    const listItem = document.createElement('li');
+                    listItem.className = 'file-item';
+                    
+                    listItem.innerHTML = `
+                        <span class="file-icon">🎮</span>
+                        <span class="file-name">${gameName}</span>
+                        <span class="file-size">提取码: ${gamePanpas}</span>
+                        <span class="file-size">解压码: ${gameRarpas}</span>
+                        <a href="${gamePan}" class="download-btn" target="_blank">下载</a>
+                    `;
+                    
+                    gameList.appendChild(listItem);
+                }
+            } catch (error) {
+                console.error('加载游戏列表失败:', error);
+                alert('加载游戏列表失败，请检查文件是否正确放置');
+            }
+        }
+        
+        // 初始化加载游戏列表
+        loadGames();
+        
+        // 搜索按钮点击事件
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-input').value.toLowerCase();
+            if(searchTerm) {
+                const gameItems = document.querySelectorAll('.file-item');
+                gameItems.forEach(item => {
+                    const gameName = item.querySelector('.file-name').textContent.toLowerCase();
+                    if(gameName.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            } else {
+                const gameItems = document.querySelectorAll('.file-item');
+                gameItems.forEach(item => {
+                    item.style.display = 'flex';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
